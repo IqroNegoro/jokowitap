@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(bgpdip.jpg); width: 100%; min-height: 100vh; background-repeat: no-repeat; background-size: cover; background-position: center; overflow: hidden; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+    <img src="jokowi-bengong-removebg-preview (1).png" alt="" id="image" style="cursor: pointer;">
+    <h3 style="font-size: 4rem; color: white;" id="counter">0</h3>
+    <script>
+        const image = document.getElementById("image");
+        let i = 0;
+        let audio = new Audio("y2mate.com - PAK JOKOWI KAGET ORIGINAL VIDEO MENTAHAN-[AudioTrimmer.com].mp3");
+        let kaget = e => {
+            if (i == 100 || i == 1000 || i == 10000 || i == 100000) {
+                alert("Selamat atas pencapaian klik ke-" + i);
+            }
+            audio.currentTime = 0;
+            audio.play();
+            image.src = "jokowikaget-removebg-preview (1).png";
+            setTimeout(() => {
+                image.src = "jokowi-bengong-removebg-preview (1).png";
+            }, 100);
+            i++
+            document.getElementById("counter").textContent = i;
+        }
+
+        image.addEventListener("click", kaget)
+        document.addEventListener("keypress", e => {
+            if (e.charCode == 13 || e.charCode == 32) {
+                kaget();
+            }
+        })
+    </script>
+</body>
+</html>
